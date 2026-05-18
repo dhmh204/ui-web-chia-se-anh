@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Cài đặt hệ thống</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Cài đặt hệ thống</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>Lưu cấu hình</button>
+        </div>
+      </header>
+
+      
+<section class="content-grid">
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Cấu hình</p><h2>Cài đặt hệ thống</h2><p class="panel-sub">Demo cấu hình cho Cloudinary, AI và bảo mật album.</p></div></div>
+    <div class="settings-row"><div><h3>Cloudinary Storage</h3><p class="meta">Lưu ảnh, thumbnail và trả về URL ảnh.</p></div><div class="switch"></div></div>
+    <div class="settings-row"><div><h3>AI phân tích ảnh</h3><p class="meta">Gắn nhãn, phát hiện ảnh mờ và nhận diện khuôn mặt.</p></div><div class="switch"></div></div>
+    <div class="settings-row"><div><h3>Bắt buộc mật khẩu album</h3><p class="meta">Khách phải nhập mật khẩu mới xem được album.</p></div><div class="switch"></div></div>
+    <div class="settings-row"><div><h3>Cho phép tải ảnh final</h3><p class="meta">Chỉ bật khi album final hoàn thành.</p></div><div class="switch"></div></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Thông tin studio</p><h2>Tiệm ảnh êm roo</h2></div></div>
+    <form class="form-grid">
+      <div class="form-group full"><label>Tên studio</label><input class="input" value="Tiệm ảnh êm roo"></div>
+      <div class="form-group full"><label>Email liên hệ</label><input class="input" value="studio@noofoto.vn"></div>
+      <div class="form-group full"><label>Số điện thoại</label><input class="input" value="0905 xxx xxx"></div>
+      <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Lưu cài đặt</button></div>
+    </form>
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

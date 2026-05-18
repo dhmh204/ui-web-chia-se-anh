@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Upload ảnh</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="photographer-dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="photographer-projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Dự án được giao</span></a>
+<a href="photographer-albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Album của tôi</span></a>
+<a href="photographer-upload.html" class="nav-item" data-nav><span class="icon">☁</span><span>Upload ảnh</span></a>
+<a href="photographer-feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="photographer-favorites.html" class="nav-item" data-nav><span class="icon">♥</span><span>Ảnh khách yêu thích</span></a>
+<a href="photographer-progress.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">T</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Thợ ảnh</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Noofoto / Thợ ảnh</p>
+          <h1 class="page-title">Upload ảnh</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>Upload ảnh</button>
+        </div>
+      </header>
+
+      
+<section class="content-grid">
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Upload Cloudinary</p><h2>Tải ảnh lên album</h2><p class="panel-sub">Demo giao diện chọn dự án/album và upload ảnh.</p></div></div>
+    <form class="form-grid">
+      <div class="form-group"><label>Dự án</label><select class="select"><option>Kỷ yếu 12A1</option><option>Concept nàng thơ</option></select></div>
+      <div class="form-group"><label>Album</label><select class="select"><option>Ảnh gốc - Kỷ yếu 12A1</option><option>Final - Concept nàng thơ</option></select></div>
+      <div class="form-group full"><label>Chọn ảnh</label><input class="input" type="file" multiple></div>
+      <div class="form-group full"><label>Ghi chú upload</label><textarea class="textarea" placeholder="VD: Ảnh đã lọc sơ bộ, chạy AI sau khi upload..."></textarea></div>
+      <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Upload ảnh</button></div>
+    </form>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Sau upload</p><h2>Hệ thống sẽ xử lý</h2></div></div>
+    <div class="quick-list">
+      <div class="quick-card"><div class="quick-icon">☁</div><div><h3>Lưu lên Cloudinary</h3><p>Nhận public_id, secure_url và thumbnail.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">✦</div><div><h3>Chạy AI</h3><p>Gắn nhãn, phát hiện ảnh mờ và trích xuất khuôn mặt.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">🖼</div><div><h3>Hiển thị album</h3><p>Khách truy cập album bằng mật khẩu để xem ảnh.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-header"><div><p class="section-kicker">Ảnh vừa upload</p><h2>Hàng đợi xử lý</h2></div></div>
+  <table class="table">
+    <thead><tr><th>File</th><th>Cloudinary</th><th>AI</th><th>Trạng thái</th></tr></thead>
+    <tbody>
+      <tr><td>IMG_7021.PNG</td><td><span class="badge green">Đã lưu URL</span></td><td><span class="badge yellow">Đang phân tích</span></td><td>Đang xử lý</td></tr>
+      <tr><td>IMG_7022.PNG</td><td><span class="badge green">Đã lưu URL</span></td><td><span class="badge green">Đã gắn nhãn</span></td><td>Hoàn tất</td></tr>
+    </tbody>
+  </table>
+</section>
+
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

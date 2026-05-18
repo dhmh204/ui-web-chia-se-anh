@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Tiến độ hậu kỳ</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="photographer-dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="photographer-projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Dự án được giao</span></a>
+<a href="photographer-albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Album của tôi</span></a>
+<a href="photographer-upload.html" class="nav-item" data-nav><span class="icon">☁</span><span>Upload ảnh</span></a>
+<a href="photographer-feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="photographer-favorites.html" class="nav-item" data-nav><span class="icon">♥</span><span>Ảnh khách yêu thích</span></a>
+<a href="photographer-progress.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">T</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Thợ ảnh</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Noofoto / Thợ ảnh</p>
+          <h1 class="page-title">Tiến độ hậu kỳ</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          
+        </div>
+      </header>
+
+      
+<section class="grid-4">
+  <div class="stat-card"><p>Chưa xử lý</p><h2>18</h2><span>Ảnh được khách chọn</span></div>
+  <div class="stat-card"><p>Đang xử lý</p><h2>12</h2><span>Đang hậu kỳ</span></div>
+  <div class="stat-card"><p>Đã hoàn thành</p><h2>52</h2><span>Có thể trả khách</span></div>
+  <div class="stat-card"><p>Tiến độ tuần này</p><h2>74%</h2><span>Theo dự án được giao</span></div>
+</section>
+
+<section class="panel">
+  <div class="panel-header"><div><p class="section-kicker">Hậu kỳ</p><h2>Cập nhật tiến độ ảnh</h2></div></div>
+  <table class="table">
+    <thead><tr><th>Ảnh</th><th>Dự án</th><th>Phản hồi</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+    <tbody>
+      <tr><td>IMG_6773.PNG</td><td>Kỷ yếu 12A1</td><td>Làm da sáng hơn</td><td><span class="badge yellow">Đang sửa</span></td><td><button class="btn sm">Đánh dấu xong</button></td></tr>
+      <tr><td>IMG_6810.PNG</td><td>Kỷ yếu 12A1</td><td>Bóp eo nhẹ</td><td><span class="badge blue">Chưa xử lý</span></td><td><button class="btn sm">Bắt đầu sửa</button></td></tr>
+      <tr><td>IMG_6902.PNG</td><td>Concept nàng thơ</td><td>Không có</td><td><span class="badge green">Hoàn thành</span></td><td><button class="btn sm">Tải bản final</button></td></tr>
+    </tbody>
+  </table>
+</section>
+
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

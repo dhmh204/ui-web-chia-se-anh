@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Album khách hàng</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="customer-shell">
+    <header class="customer-header">
+      <img src="./assets/logo.png" alt="Noofoto">
+      <div class="top-actions">
+        <a class="btn sm" href="customer-favorites.html">♥ Ảnh yêu thích</a>
+        <a class="btn sm" href="customer-status.html">Theo dõi trạng thái</a>
+        <a class="btn sm" href="customer-access.html">Thoát album</a>
+      </div>
+    </header>
+
+    <main class="customer-main">
+      <section class="hero-album">
+        <div>
+          <p class="kicker">ALBUM ĐÃ MỞ KHÓA</p>
+          <h1>Kỷ yếu 12A1</h1>
+          <p>Xem ảnh, tìm kiếm theo ngữ nghĩa/khuôn mặt, lọc ảnh, yêu thích ảnh và gửi phản hồi chỉnh sửa trực tiếp cho studio.</p>
+        </div>
+        <div class="action-row">
+          <span class="badge green">248 ảnh</span>
+          <span class="badge blue">12 ảnh yêu thích</span>
+          <span class="badge yellow">5 phản hồi</span>
+        </div>
+      </section>
+
+      <section class="customer-toolbar">
+        <input class="search" placeholder="Tìm theo ngữ nghĩa: cô dâu cười, nhóm bạn, váy đỏ..." />
+        <button class="btn">Tìm khuôn mặt</button>
+        <button class="btn">Lọc ảnh</button>
+      </section>
+
+      <div class="tabs">
+        <button class="tab active">Tất cả</button>
+        <button class="tab">Ảnh yêu thích</button>
+        <button class="tab">Có phản hồi</button>
+        <button class="tab">Đã hoàn thành</button>
+        <button class="tab">Theo khuôn mặt</button>
+      </div>
+
+      <section class="photo-gallery">
+        <article class="gallery-card">
+          <div class="photo-thumb"></div>
+          <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="customer-photo-detail.html">↗</a></div>
+          <div class="gallery-info"><div><h3>IMG_6773.PNG</h3><p>3 phản hồi · 12 yêu thích</p></div><span class="badge yellow">Đang sửa</span></div>
+        </article>
+        <article class="gallery-card">
+          <div class="photo-thumb"></div>
+          <div class="gallery-actions"><button class="floating-btn active" data-like>♥</button><a class="floating-btn" href="customer-photo-detail.html">↗</a></div>
+          <div class="gallery-info"><div><h3>IMG_6810.PNG</h3><p>2 phản hồi · 8 yêu thích</p></div><span class="badge blue">Mới</span></div>
+        </article>
+        <article class="gallery-card">
+          <div class="photo-thumb"></div>
+          <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="customer-photo-detail.html">↗</a></div>
+          <div class="gallery-info"><div><h3>IMG_6902.PNG</h3><p>0 phản hồi · 5 yêu thích</p></div><span class="badge green">Hoàn thành</span></div>
+        </article>
+        <article class="gallery-card">
+          <div class="photo-thumb"></div>
+          <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="customer-photo-detail.html">↗</a></div>
+          <div class="gallery-info"><div><h3>IMG_7021.PNG</h3><p>1 phản hồi · 3 yêu thích</p></div><span class="badge gray">Chưa xử lý</span></div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

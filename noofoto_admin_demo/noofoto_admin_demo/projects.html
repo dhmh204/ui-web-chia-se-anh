@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Quản lý dự án</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Quản lý dự án</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>+ Tạo dự án</button>
+        </div>
+      </header>
+
+      
+<section class="content-grid">
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Dự án</p><h2>Tạo dự án mới</h2><p class="panel-sub">Dự án là gói chụp/sự kiện, có thể gồm nhiều album.</p></div></div>
+    <form class="form-grid">
+      <div class="form-group"><label>Tên dự án</label><input class="input" placeholder="VD: Kỷ yếu 12A1"></div>
+      <div class="form-group"><label>Ngày chụp</label><input class="input" type="date"></div>
+      <div class="form-group"><label>Khách hàng / lớp / cặp đôi</label><input class="input" placeholder="VD: Lớp 12A1"></div>
+      <div class="form-group"><label>Thợ ảnh phụ trách</label><select class="select"><option>Minh Anh</option><option>Quốc Huy</option><option>Thanh Vũ</option></select></div>
+      <div class="form-group full"><label>Mô tả</label><textarea class="textarea" placeholder="Thông tin buổi chụp, ghi chú, địa điểm..."></textarea></div>
+      <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Tạo dự án</button></div>
+    </form>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Trạng thái</p><h2>Luồng dự án</h2></div></div>
+    <div class="quick-list">
+      <div class="quick-card"><div class="quick-icon">1</div><div><h3>Mới tạo</h3><p>Khởi tạo thông tin và phân công thợ ảnh.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">2</div><div><h3>Đang chọn</h3><p>Khách xem album, yêu thích ảnh và phản hồi.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">3</div><div><h3>Đang sửa</h3><p>Thợ ảnh xử lý hậu kỳ theo phản hồi.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">4</div><div><h3>Hoàn thành</h3><p>Album final sẵn sàng bàn giao.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-header"><div><p class="section-kicker">Danh sách</p><h2>Dự án hiện có</h2></div></div>
+  <table class="table">
+    <thead><tr><th>Dự án</th><th>Khách</th><th>Thợ ảnh</th><th>Ngày chụp</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+    <tbody>
+      <tr><td>Kỷ yếu 12A1</td><td>Lớp 12A1</td><td>Minh Anh</td><td>12/05/2026</td><td><span class="badge yellow">Đang sửa</span></td><td class="action-row"><a class="btn sm" href="albums.html">Album</a><button class="btn sm">Sửa</button></td></tr>
+      <tr><td>Cưới Hoàng & Linh</td><td>Hoàng - Linh</td><td>Quốc Huy</td><td>08/05/2026</td><td><span class="badge green">Hoàn thành</span></td><td class="action-row"><a class="btn sm" href="albums.html">Album</a><button class="btn sm">Sửa</button></td></tr>
+      <tr><td>Concept nàng thơ</td><td>Ngọc Trâm</td><td>Thanh Vũ</td><td>02/05/2026</td><td><span class="badge blue">Mới</span></td><td class="action-row"><a class="btn sm" href="albums.html">Album</a><button class="btn sm">Sửa</button></td></tr>
+    </tbody>
+  </table>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

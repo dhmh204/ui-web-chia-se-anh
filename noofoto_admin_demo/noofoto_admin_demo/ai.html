@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - AI / Nhãn & khuôn mặt</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">AI / Nhãn & khuôn mặt</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>Chạy AI</button>
+        </div>
+      </header>
+
+      
+<section class="content-grid">
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">AI Service</p><h2>Nhãn ảnh tự động</h2><p class="panel-sub">Hệ thống gắn nhãn để phục vụ tìm kiếm ngữ nghĩa và lọc ảnh.</p></div><button class="btn primary" data-demo-alert>Chạy phân tích AI</button></div>
+    <table class="table">
+      <thead><tr><th>Ảnh</th><th>Nhãn</th><th>Trạng thái</th></tr></thead>
+      <tbody>
+        <tr><td>IMG_6773.PNG</td><td>cô dâu, ngoài trời, đang cười</td><td><span class="badge green">Đã gắn nhãn</span></td></tr>
+        <tr><td>IMG_6810.PNG</td><td>nhóm bạn, váy trắng, sân trường</td><td><span class="badge green">Đã gắn nhãn</span></td></tr>
+        <tr><td>IMG_6902.PNG</td><td>đang xử lý...</td><td><span class="badge yellow">Chờ AI</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Khuôn mặt</p><h2>Nhóm khuôn mặt</h2><p class="panel-sub">Đặt tên nhóm để khách xem ảnh theo khuôn mặt.</p></div></div>
+    <div class="quick-list">
+      <div class="quick-card"><div class="quick-icon">A</div><div><h3>Người lạ 1</h3><p>128 ảnh · Chưa đặt tên</p></div><button class="btn sm">Đặt tên</button></div>
+      <div class="quick-card"><div class="quick-icon">B</div><div><h3>Linh</h3><p>96 ảnh · Đã đặt tên</p></div><button class="btn sm">Sửa</button></div>
+      <div class="quick-card"><div class="quick-icon">C</div><div><h3>Hoàng</h3><p>74 ảnh · Đã đặt tên</p></div><button class="btn sm">Sửa</button></div>
+    </div>
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Quản lý nhân sự</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Quản lý nhân sự</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>+ Thêm thợ ảnh</button>
+        </div>
+      </header>
+
+      
+<section class="content-grid">
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Tạo tài khoản</p><h2>Thêm thợ ảnh mới</h2><p class="panel-sub">Admin cấp tài khoản nội bộ cho thợ ảnh.</p></div></div>
+    <form class="form-grid">
+      <div class="form-group"><label>Họ và tên</label><input class="input" placeholder="VD: Nguyễn Minh Anh"></div>
+      <div class="form-group"><label>Email</label><input class="input" placeholder="photo@noofoto.vn"></div>
+      <div class="form-group"><label>Số điện thoại</label><input class="input" placeholder="0905 xxx xxx"></div>
+      <div class="form-group"><label>Vai trò</label><select class="select"><option>THO_ANH</option><option>ADMIN</option></select></div>
+      <div class="form-group full"><label>Ghi chú</label><textarea class="textarea" placeholder="Ghi chú nội bộ..."></textarea></div>
+      <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Tạo tài khoản</button></div>
+    </form>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Phân quyền</p><h2>Quyền tài khoản</h2></div></div>
+    <div class="quick-list">
+      <div class="quick-card"><div class="quick-icon">✓</div><div><h3>Admin</h3><p>Toàn quyền quản lý hệ thống, nhân sự, dự án.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">✓</div><div><h3>Thợ ảnh</h3><p>Xem dự án được phân công, upload ảnh, quản lý phản hồi.</p></div></div>
+      <div class="quick-card"><div class="quick-icon">×</div><div><h3>Khách hàng</h3><p>Không có tài khoản, truy cập album bằng mật khẩu.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-header"><div><p class="section-kicker">Danh sách nhân sự</p><h2>Tài khoản Admin / Thợ ảnh</h2></div><button class="btn sm">Xuất danh sách</button></div>
+  <div class="card-grid">
+    <div class="staff-card"><div class="staff-top"><div class="avatar">MH</div><div><h3>Minh Hằng</h3><p class="meta">admin@noofoto.vn</p></div></div><span class="badge green">ADMIN</span><div class="card-footer"><button class="btn sm">Sửa</button><button class="btn sm danger">Khóa</button></div></div>
+    <div class="staff-card"><div class="staff-top"><div class="avatar">MA</div><div><h3>Minh Anh</h3><p class="meta">minhanh@noofoto.vn</p></div></div><span class="badge blue">THỢ ẢNH</span><div class="card-footer"><button class="btn sm">Sửa</button><button class="btn sm danger">Khóa</button></div></div>
+    <div class="staff-card"><div class="staff-top"><div class="avatar">QH</div><div><h3>Quốc Huy</h3><p class="meta">quochuy@noofoto.vn</p></div></div><span class="badge blue">THỢ ẢNH</span><div class="card-footer"><button class="btn sm">Sửa</button><button class="btn sm danger">Khóa</button></div></div>
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

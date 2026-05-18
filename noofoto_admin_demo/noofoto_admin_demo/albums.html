@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Quản lý album</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Quản lý album</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>+ Tạo album</button>
+        </div>
+      </header>
+
+      
+<section class="panel">
+  <div class="panel-header"><div><p class="section-kicker">Album</p><h2>Tạo / cấu hình album</h2><p class="panel-sub">Album có mật khẩu riêng để khách hàng truy cập mà không cần tài khoản.</p></div></div>
+  <form class="form-grid">
+    <div class="form-group"><label>Tên album</label><input class="input" placeholder="VD: Ảnh gốc - Kỷ yếu 12A1"></div>
+    <div class="form-group"><label>Thuộc dự án</label><select class="select"><option>Kỷ yếu 12A1</option><option>Cưới Hoàng & Linh</option></select></div>
+    <div class="form-group"><label>Loại album</label><select class="select"><option>Ảnh gốc</option><option>Hậu kỳ</option><option>Final</option></select></div>
+    <div class="form-group"><label>Mật khẩu album</label><input class="input" placeholder="VD: 12A1-2026"></div>
+    <div class="form-group"><label>Quyền download</label><select class="select"><option>Tắt</option><option>Bật</option></select></div>
+    <div class="form-group"><label>Trạng thái</label><select class="select"><option>Đang mở</option><option>Tạm khóa</option></select></div>
+    <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Lưu album</button></div>
+  </form>
+</section>
+
+<section class="card-grid">
+  <div class="album-card"><div class="album-cover"></div><div class="card-body"><h3>Ảnh gốc - Kỷ yếu 12A1</h3><p class="meta">248 ảnh · Mật khẩu: 12A1-2026 · Download: Tắt</p><div class="card-footer"><a class="btn sm" href="photos.html">Xem ảnh</a><button class="btn sm">Copy link</button><button class="btn sm">Sửa</button></div></div></div>
+  <div class="album-card"><div class="album-cover"></div><div class="card-body"><h3>Hậu kỳ - Cưới Hoàng & Linh</h3><p class="meta">65 ảnh · Mật khẩu: wedding-hl · Download: Bật</p><div class="card-footer"><a class="btn sm" href="photos.html">Xem ảnh</a><button class="btn sm">Copy link</button><button class="btn sm">Sửa</button></div></div></div>
+  <div class="album-card"><div class="album-cover"></div><div class="card-body"><h3>Final - Concept nàng thơ</h3><p class="meta">32 ảnh · Mật khẩu: nangtho · Download: Bật</p><div class="card-footer"><a class="btn sm" href="photos.html">Xem ảnh</a><button class="btn sm">Copy link</button><button class="btn sm">Sửa</button></div></div></div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

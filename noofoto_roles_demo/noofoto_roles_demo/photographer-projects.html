@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Dự án được giao</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="photographer-dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="photographer-projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Dự án được giao</span></a>
+<a href="photographer-albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Album của tôi</span></a>
+<a href="photographer-upload.html" class="nav-item" data-nav><span class="icon">☁</span><span>Upload ảnh</span></a>
+<a href="photographer-feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="photographer-favorites.html" class="nav-item" data-nav><span class="icon">♥</span><span>Ảnh khách yêu thích</span></a>
+<a href="photographer-progress.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">T</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Thợ ảnh</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Noofoto / Thợ ảnh</p>
+          <h1 class="page-title">Dự án được giao</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          
+        </div>
+      </header>
+
+      
+<section class="panel">
+  <div class="panel-header">
+    <div><p class="section-kicker">Dự án được giao</p><h2>Danh sách dự án của tôi</h2><p class="panel-sub">Thợ ảnh không quản lý nhân sự, chỉ thao tác trên dự án được phân công.</p></div>
+  </div>
+  <table class="table">
+    <thead><tr><th>Dự án</th><th>Ngày chụp</th><th>Album</th><th>Ảnh</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+    <tbody>
+      <tr><td>Kỷ yếu 12A1</td><td>12/05/2026</td><td>2</td><td>248</td><td><span class="badge yellow">Đang sửa</span></td><td class="action-row"><a class="btn sm" href="photographer-albums.html">Album</a><button class="btn sm">Chi tiết</button></td></tr>
+      <tr><td>Concept nàng thơ</td><td>02/05/2026</td><td>1</td><td>132</td><td><span class="badge blue">Đang chọn</span></td><td class="action-row"><a class="btn sm" href="photographer-albums.html">Album</a><button class="btn sm">Chi tiết</button></td></tr>
+      <tr><td>Ảnh gia đình Thu Hà</td><td>28/04/2026</td><td>1</td><td>88</td><td><span class="badge gray">Mới tạo</span></td><td class="action-row"><a class="btn sm" href="photographer-albums.html">Album</a><button class="btn sm">Chi tiết</button></td></tr>
+    </tbody>
+  </table>
+</section>
+
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

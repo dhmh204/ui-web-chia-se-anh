@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Tiến độ hậu kỳ</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Tiến độ hậu kỳ</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>Cập nhật tiến độ</button>
+        </div>
+      </header>
+
+      
+<section class="grid-4">
+  <div class="stat-card"><p>Chưa xử lý</p><h2>28</h2><span>Ảnh có yêu cầu mới</span></div>
+  <div class="stat-card"><p>Đang xử lý</p><h2>14</h2><span>Đang hậu kỳ</span></div>
+  <div class="stat-card"><p>Đã hoàn thành</p><h2>86</h2><span>Có thể bàn giao</span></div>
+  <div class="stat-card"><p>Tỉ lệ hoàn tất</p><h2>76%</h2><span>Toàn bộ dự án</span></div>
+</section>
+
+<section class="panel">
+  <div class="panel-header"><div><p class="section-kicker">Workflow</p><h2>Theo dõi tiến độ hậu kỳ</h2><p class="panel-sub">Admin/Thợ ảnh cập nhật trạng thái từ chưa xử lý → đang xử lý → đã xử lý.</p></div></div>
+  <div class="progress-list">
+    <div class="progress-item"><div class="progress-top"><div><h3>Kỷ yếu 12A1</h3><p class="meta">48/120 ảnh đã xử lý</p></div><span class="badge yellow">40%</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div></div>
+    <div class="progress-item"><div class="progress-top"><div><h3>Cưới Hoàng & Linh</h3><p class="meta">65/65 ảnh đã xử lý</p></div><span class="badge green">100%</span></div><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div></div>
+    <div class="progress-item"><div class="progress-top"><div><h3>Concept nàng thơ</h3><p class="meta">12/32 ảnh đã xử lý</p></div><span class="badge yellow">38%</span></div><div class="progress-bar"><div class="progress-fill" style="width:38%"></div></div></div>
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

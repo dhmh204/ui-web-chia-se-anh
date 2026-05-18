@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Theo dõi trạng thái</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="customer-shell">
+    <header class="customer-header">
+      <img src="./assets/logo.png" alt="Noofoto">
+      <div class="top-actions">
+        <a class="btn sm" href="customer-album.html">← Album</a>
+        <a class="btn sm" href="customer-favorites.html">Ảnh yêu thích</a>
+      </div>
+    </header>
+    <main class="customer-main">
+      <section class="panel">
+        <div class="panel-header"><div><p class="section-kicker">Trạng thái xử lý</p><h2>Theo dõi ảnh đã yêu thích / phản hồi</h2></div></div>
+        <table class="table">
+          <thead><tr><th>Ảnh</th><th>Yêu cầu</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
+          <tbody>
+            <tr><td>IMG_6773.PNG</td><td>Làm da sáng hơn</td><td><span class="badge yellow">Đang sửa</span></td><td><a class="btn sm" href="customer-photo-detail.html">Xem</a></td></tr>
+            <tr><td>IMG_6810.PNG</td><td>Bóp eo nhẹ</td><td><span class="badge blue">Chưa xử lý</span></td><td><a class="btn sm" href="customer-photo-detail.html">Xem</a></td></tr>
+            <tr><td>IMG_6902.PNG</td><td>Không có</td><td><span class="badge green">Hoàn thành</span></td><td><button class="btn sm primary">Tải final</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Tổng quan thợ ảnh</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="photographer-dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="photographer-projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Dự án được giao</span></a>
+<a href="photographer-albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Album của tôi</span></a>
+<a href="photographer-upload.html" class="nav-item" data-nav><span class="icon">☁</span><span>Upload ảnh</span></a>
+<a href="photographer-feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="photographer-favorites.html" class="nav-item" data-nav><span class="icon">♥</span><span>Ảnh khách yêu thích</span></a>
+<a href="photographer-progress.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">T</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Thợ ảnh</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Noofoto / Thợ ảnh</p>
+          <h1 class="page-title">Tổng quan thợ ảnh</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <a class="btn primary" href="photographer-upload.html">Upload ảnh</a>
+        </div>
+      </header>
+
+      
+<section class="grid-4">
+  <div class="stat-card"><p>Dự án được giao</p><h2>07</h2><span>2 dự án đang xử lý</span></div>
+  <div class="stat-card"><p>Album đang mở</p><h2>12</h2><span>Đang gửi cho khách</span></div>
+  <div class="stat-card"><p>Ảnh cần hậu kỳ</p><h2>86</h2><span>Từ ảnh yêu thích/phản hồi</span></div>
+  <div class="stat-card"><p>Phản hồi mới</p><h2>19</h2><span>Cần kiểm tra trong hôm nay</span></div>
+</section>
+
+<section class="content-grid">
+  <div class="panel">
+    <div class="panel-header">
+      <div><p class="section-kicker">Dự án của tôi</p><h2>Công việc đang phụ trách</h2><p class="panel-sub">Thợ ảnh chỉ thấy các dự án được Admin phân công.</p></div>
+      <a class="btn sm" href="photographer-projects.html">Xem tất cả</a>
+    </div>
+    <table class="table">
+      <thead><tr><th>Dự án</th><th>Album</th><th>Ảnh</th><th>Phản hồi</th><th>Trạng thái</th></tr></thead>
+      <tbody>
+        <tr><td>Kỷ yếu 12A1</td><td>2 album</td><td>248</td><td>15</td><td><span class="badge yellow">Đang sửa</span></td></tr>
+        <tr><td>Concept nàng thơ</td><td>1 album</td><td>132</td><td>4</td><td><span class="badge blue">Đang chọn</span></td></tr>
+        <tr><td>Ảnh gia đình Thu Hà</td><td>1 album</td><td>88</td><td>0</td><td><span class="badge gray">Mới tạo</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div><p class="section-kicker">Thao tác nhanh</p><h2>Công cụ thợ ảnh</h2></div></div>
+    <div class="quick-list">
+      <a class="quick-card" href="photographer-upload.html"><div class="quick-icon">☁</div><div><h3>Upload ảnh</h3><p>Tải ảnh lên Cloudinary và lưu vào album.</p></div></a>
+      <a class="quick-card" href="photographer-feedback.html"><div class="quick-icon">💬</div><div><h3>Xem phản hồi</h3><p>Đọc nhận xét và ghi chú chỉnh sửa của khách.</p></div></a>
+      <a class="quick-card" href="photographer-progress.html"><div class="quick-icon">⚡</div><div><h3>Cập nhật hậu kỳ</h3><p>Chuyển trạng thái ảnh/feedback.</p></div></a>
+    </div>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Ảnh khách yêu thích</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="photographer-dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="photographer-projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Dự án được giao</span></a>
+<a href="photographer-albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Album của tôi</span></a>
+<a href="photographer-upload.html" class="nav-item" data-nav><span class="icon">☁</span><span>Upload ảnh</span></a>
+<a href="photographer-feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="photographer-favorites.html" class="nav-item" data-nav><span class="icon">♥</span><span>Ảnh khách yêu thích</span></a>
+<a href="photographer-progress.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">T</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Thợ ảnh</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Noofoto / Thợ ảnh</p>
+          <h1 class="page-title">Ảnh khách yêu thích</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          
+        </div>
+      </header>
+
+      
+<section class="panel">
+  <div class="panel-header">
+    <div><p class="section-kicker">Ảnh khách yêu thích</p><h2>Danh sách ảnh được thả tim</h2><p class="panel-sub">Không cần khách gửi danh sách; ảnh yêu thích được cập nhật trực tiếp trong hệ thống.</p></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6773.PNG</h3><p class="meta">12 lượt yêu thích · 3 phản hồi · Kỷ yếu 12A1</p><div class="card-footer"><span class="badge yellow">Cần hậu kỳ</span><button class="btn sm">Xem phản hồi</button></div></div></div>
+    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6810.PNG</h3><p class="meta">8 lượt yêu thích · 2 phản hồi · Kỷ yếu 12A1</p><div class="card-footer"><span class="badge yellow">Đang sửa</span><button class="btn sm">Xem phản hồi</button></div></div></div>
+    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6902.PNG</h3><p class="meta">5 lượt yêu thích · 0 phản hồi · Concept nàng thơ</p><div class="card-footer"><span class="badge blue">Mới chọn</span><button class="btn sm">Xem ảnh</button></div></div></div>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

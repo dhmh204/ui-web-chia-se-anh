@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Quản lý ảnh</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Quản lý ảnh</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm nhanh..." />
+          <button class="btn primary" data-demo-alert>Upload ảnh</button>
+        </div>
+      </header>
+
+      
+<section class="panel">
+  <div class="panel-header">
+    <div><p class="section-kicker">Cloudinary</p><h2>Upload và quản lý ảnh</h2><p class="panel-sub">Demo UI upload ảnh, lưu URL Cloudinary, ẩn/hiện ảnh và kích hoạt AI xử lý.</p></div>
+    <button class="btn primary" data-demo-alert>Upload ảnh</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active">Tất cả</button>
+    <button class="tab">Ảnh hiển thị</button>
+    <button class="tab">Ảnh bị ẩn</button>
+    <button class="tab">Ảnh mờ</button>
+    <button class="tab">Ảnh được yêu thích</button>
+  </div>
+
+  <div class="card-grid">
+    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6773.PNG</h3><p class="meta">Cloudinary URL đã lưu · 12 lượt yêu thích · 3 phản hồi</p><div class="card-footer"><span class="badge green">Hiển thị</span><button class="btn sm">Chi tiết</button><button class="btn sm">Ẩn</button></div></div></div>
+    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6810.PNG</h3><p class="meta">Cloudinary URL đã lưu · 8 lượt yêu thích · 2 phản hồi</p><div class="card-footer"><span class="badge yellow">Đang sửa</span><button class="btn sm">Chi tiết</button><button class="btn sm">Ẩn</button></div></div></div>
+    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6902.PNG</h3><p class="meta">AI phát hiện ảnh mờ · 0 lượt yêu thích</p><div class="card-footer"><span class="badge red">Ảnh mờ</span><button class="btn sm">Chi tiết</button><button class="btn sm">Hiện lại</button></div></div></div>
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
