@@ -1,92 +1,460 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noofoto Admin - Quản lý nhân sự</title>
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="logo-box">
-        <img src="./assets/logo.png" alt="Noofoto" />
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noofoto Admin - Quản lý nhân sự</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-      <p class="nav-label">Menu chính</p>
-      <nav class="sidebar-nav">
-        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
-<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
-<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
-<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
-<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
-<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
-<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
-<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
-<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
-      </nav>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo-box">
+          <img src="./assets/logo.png" alt="Noofoto" />
+        </div>
 
-      <div class="sidebar-footer">
-        <div class="user-mini">
-          <div class="avatar">A</div>
-          <div>
-            <p>Đăng nhập với vai trò</p>
-            <strong>Admin Studio</strong>
+        <p class="nav-label">Menu chính</p>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="nav-item">
+            <span class="icon">◼</span>
+            <span>Tổng quan</span>
+          </a>
+
+          <a href="staff.html" class="nav-item active">
+            <span class="icon">👥</span>
+            <span>Quản lý nhân sự</span>
+          </a>
+
+          <a href="projects.html" class="nav-item">
+            <span class="icon">📁</span>
+            <span>Quản lý dự án</span>
+          </a>
+
+          <a href="albums.html" class="nav-item">
+            <span class="icon">🖼</span>
+            <span>Quản lý album</span>
+          </a>
+
+          <a href="photos.html" class="nav-item">
+            <span class="icon">☁</span>
+            <span>Quản lý ảnh</span>
+          </a>
+
+          <a href="feedback.html" class="nav-item">
+            <span class="icon">💬</span>
+            <span>Phản hồi ảnh</span>
+          </a>
+
+          <a href="postproduction.html" class="nav-item">
+            <span class="icon">⚡</span>
+            <span>Tiến độ hậu kỳ</span>
+          </a>
+
+          <a href="ai.html" class="nav-item">
+            <span class="icon">✦</span>
+            <span>AI / Nhãn & khuôn mặt</span>
+          </a>
+
+          <a href="settings.html" class="nav-item">
+            <span class="icon">⚙</span>
+            <span>Cài đặt</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="avatar">A</div>
+            <div>
+              <p>Đăng nhập với vai trò</p>
+              <strong>Admin Studio</strong>
+            </div>
           </div>
         </div>
-      </div>
-    </aside>
+      </aside>
 
-    <main class="main">
-      <header class="topbar">
-        <div>
-          <p class="breadcrumb">Quản trị hệ thống</p>
-          <h1 class="page-title">Quản lý nhân sự</h1>
+      <!-- MAIN -->
+      <main class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+          <div>
+            <p class="breadcrumb">Quản trị hệ thống</p>
+            <h1 class="page-title">Quản lý nhân sự</h1>
+          </div>
+
+          <div class="top-actions">
+            <input class="search" placeholder="Tìm kiếm nhân sự..." />
+            <button class="btn primary">+ Thêm thợ ảnh</button>
+          </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section class="grid-4">
+          <div class="stat-card">
+            <p>Tổng tài khoản</p>
+            <h2>08</h2>
+            <span>Admin và thợ ảnh nội bộ</span>
+          </div>
+
+          <div class="stat-card">
+            <p>Đang hoạt động</p>
+            <h2>06</h2>
+            <span>Có thể đăng nhập hệ thống</span>
+          </div>
+
+          <div class="stat-card">
+            <p>Chờ đổi mật khẩu</p>
+            <h2>01</h2>
+            <span>Tài khoản vừa được cấp</span>
+          </div>
+
+          <div class="stat-card">
+            <p>Đã khóa</p>
+            <h2>01</h2>
+            <span>Không thể truy cập hệ thống</span>
+          </div>
+        </section>
+
+        <!-- CREATE STAFF -->
+        <section class="content-grid">
+          <!-- FORM -->
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-kicker">Cấp tài khoản</p>
+                <h2>Tạo tài khoản thợ ảnh</h2>
+                <p class="panel-sub">
+                  Admin tạo tài khoản nội bộ cho thợ ảnh. Hệ thống sẽ tự sinh
+                  mật khẩu tạm thời sau khi tạo thành công.
+                </p>
+              </div>
+            </div>
+
+              <form class="form-grid" id="createStaffForm">
+            <div class="form-group">
+              <label>Họ và tên</label>
+              <input id="staffName" class="input" placeholder="VD: Nguyễn Minh Anh" />
+            </div>
+
+            <div class="form-group">
+              <label>Email đăng nhập</label>
+              <input id="staffEmail" class="input" placeholder="minhanh@noofoto.vn" />
+            </div>
+
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input id="staffPhone" class="input" placeholder="0905 xxx xxx" />
+            </div>
+
+            <div class="form-group">
+              <label>Vai trò</label>
+                    <div class="custom-select" data-name="staffStatus">
+          <button type="button" class="custom-select__trigger">
+            <span data-selected>thợ ảnh</span>
+            <span class="custom-select__arrow">⌄</span>
+          </button>
+
+          <div class="custom-select__menu">
+            <button type="button" data-value="thợ ảnh">
+              thợ ảnh   
+            </button>
+            <button type="button" data-value="admin">
+              admin
+            </button>
+          </div>
+
+          <input type="hidden" id="staffStatus" value="CHUA_DOI_MAT_KHAU" />
         </div>
+            </div>
 
-        <div class="top-actions">
-          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
-          <input class="search" placeholder="Tìm kiếm nhanh..." />
-          <button class="btn primary" data-demo-alert>+ Thêm thợ ảnh</button>
+            <div class="form-group">
+              <label>Trạng thái ban đầu</label>
+           <div class="custom-select" data-name="staffStatus">
+          <button type="button" class="custom-select__trigger">
+            <span data-selected>CHUA_DOI_MAT_KHAU</span>
+            <span class="custom-select__arrow">⌄</span>
+          </button>
+
+          <div class="custom-select__menu">
+            <button type="button" data-value="CHUA_DOI_MAT_KHAU">
+              CHUA_DOI_MAT_KHAU
+            </button>
+            <button type="button" data-value="HOAT_DONG">
+              HOAT_DONG
+            </button>
+          </div>
+
+          <input type="hidden" id="staffStatus" value="CHUA_DOI_MAT_KHAU" />
         </div>
-      </header>
+            </div>
 
-      
-<section class="content-grid">
-  <div class="panel">
-    <div class="panel-header"><div><p class="section-kicker">Tạo tài khoản</p><h2>Thêm thợ ảnh mới</h2><p class="panel-sub">Admin cấp tài khoản nội bộ cho thợ ảnh.</p></div></div>
-    <form class="form-grid">
-      <div class="form-group"><label>Họ và tên</label><input class="input" placeholder="VD: Nguyễn Minh Anh"></div>
-      <div class="form-group"><label>Email</label><input class="input" placeholder="photo@noofoto.vn"></div>
-      <div class="form-group"><label>Số điện thoại</label><input class="input" placeholder="0905 xxx xxx"></div>
-      <div class="form-group"><label>Vai trò</label><select class="select"><option>THO_ANH</option><option>ADMIN</option></select></div>
-      <div class="form-group full"><label>Ghi chú</label><textarea class="textarea" placeholder="Ghi chú nội bộ..."></textarea></div>
-      <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Tạo tài khoản</button></div>
-    </form>
+            <div class="form-group">
+              <label>Cách cấp mật khẩu</label>
+                <div class="custom-select" data-name="staffStatus">
+          <button type="button" class="custom-select__trigger">
+            <span data-selected>Hệ thống tự sinh mật khẩu tạm</span>
+            <span class="custom-select__arrow">⌄</span>
+          </button>
+
+          <div class="custom-select__menu">
+            <button type="button" data-value="Hệ thống tự sinh mật khẩu tạm">
+            Hệ thống tự sinh mật khẩu tạm
+            </button>
+            <button type="button" data-value="Admin nhập mật khẩu tạm">
+            Admin nhập mật khẩu tạm
+            </button>
+          </div>
+
+          <input type="hidden" id="staffStatus" value="CHUA_DOI_MAT_KHAU" />
+        </div>
+            </div>
+
+            <div class="form-group full" id="manualPasswordGroup" style="display: none">
+              <label>Mật khẩu tạm</label>
+              <input id="manualPassword" class="input" placeholder="Nhập mật khẩu tạm" />
+            </div>
+
+            <div class="form-group full">
+              <label>Ghi chú nội bộ</label>
+              <textarea
+                id="staffNote"
+                class="textarea"
+                placeholder="VD: Thợ ảnh phụ trách các dự án kỷ yếu, cưới hỏi..."
+              ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <button class="btn primary" type="submit">
+                Tạo tài khoản
+              </button>
+            </div>
+            </form>
+          </div>
+
+          <!-- PROCESS -->
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-kicker">Luồng nghiệp vụ</p>
+                <h2>Quy trình cấp tài khoản</h2>
+                <p class="panel-sub">
+                  Khách hàng không có tài khoản. Chỉ Admin và thợ ảnh mới đăng
+                  nhập hệ thống nội bộ.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-list">
+            <div class="process-item active" data-step="1">
+  <div class="process-number">1</div>
+  <div>
+    <h3>Admin nhập thông tin</h3>
+    <p>Nhập họ tên, email, số điện thoại và vai trò thợ ảnh.</p>
   </div>
+</div>
 
-  <div class="panel">
-    <div class="panel-header"><div><p class="section-kicker">Phân quyền</p><h2>Quyền tài khoản</h2></div></div>
-    <div class="quick-list">
-      <div class="quick-card"><div class="quick-icon">✓</div><div><h3>Admin</h3><p>Toàn quyền quản lý hệ thống, nhân sự, dự án.</p></div></div>
-      <div class="quick-card"><div class="quick-icon">✓</div><div><h3>Thợ ảnh</h3><p>Xem dự án được phân công, upload ảnh, quản lý phản hồi.</p></div></div>
-      <div class="quick-card"><div class="quick-icon">×</div><div><h3>Khách hàng</h3><p>Không có tài khoản, truy cập album bằng mật khẩu.</p></div></div>
+<div class="process-item" data-step="2">
+  <div class="process-number">2</div>
+  <div>
+    <h3>Hệ thống tạo tài khoản</h3>
+    <p>Email được kiểm tra trùng và lưu vào bảng người dùng.</p>
+  </div>
+</div>
+
+<div class="process-item" data-step="3">
+  <div class="process-number">3</div>
+  <div>
+    <h3>Sinh mật khẩu tạm</h3>
+    <p>Mật khẩu được hash bằng bcrypt trước khi lưu CSDL.</p>
+  </div>
+</div>
+
+<div class="process-item" data-step="4">
+  <div class="process-number">4</div>
+  <div>
+    <h3>Thợ ảnh đăng nhập lần đầu</h3>
+    <p>Sau khi đăng nhập, thợ ảnh nên đổi mật khẩu mới.</p>
+  </div>
+</div>
+            </div>
+
+            <div class="notice-box">
+              <h3>Lưu ý</h3>
+              <p>
+                Khách hàng chỉ truy cập album bằng link và mật khẩu album, không
+                cần tạo tài khoản trong hệ thống.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAFF LIST -->
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Danh sách nhân sự</p>
+              <h2>Tài khoản Admin / Thợ ảnh</h2>
+              <p class="panel-sub">
+                Quản lý trạng thái hoạt động, phân quyền và khóa tài khoản khi
+                nhân sự không còn làm việc.
+              </p>
+            </div>
+
+            <button class="btn sm">Xuất danh sách</button>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nhân sự</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+                <th>Trạng thái</th>
+                <th>Dự án phụ trách</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+
+            <tbody id="staffTableBody">
+              <tr>
+                <td>
+                  <div class="staff-inline">
+                    <div class="avatar">MH</div>
+                    <div>
+                      <strong>Minh Hằng</strong>
+                      <p>Chủ studio</p>
+                    </div>
+                  </div>
+                </td>
+                <td>admin@noofoto.vn</td>
+                <td><span class="badge green">ADMIN</span></td>
+                <td><span class="badge green">Hoạt động</span></td>
+                <td>Toàn bộ hệ thống</td>
+                <td>
+                  <div class="action-row">
+                    <button class="btn sm">Sửa</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="staff-inline">
+                    <div class="avatar">MA</div>
+                    <div>
+                      <strong>Minh Anh</strong>
+                      <p>Thợ ảnh chính</p>
+                    </div>
+                  </div>
+                </td>
+                <td>minhanh@noofoto.vn</td>
+                <td><span class="badge blue">THỢ ẢNH</span></td>
+                <td><span class="badge green">Hoạt động</span></td>
+                <td>03 dự án</td>
+                <td>
+                  <div class="action-row">
+                    <button class="btn sm">Sửa</button>
+                    <button class="btn sm danger">Khóa</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="staff-inline">
+                    <div class="avatar">QH</div>
+                    <div>
+                      <strong>Quốc Huy</strong>
+                      <p>Nhân viên hậu kỳ</p>
+                    </div>
+                  </div>
+                </td>
+                <td>quochuy@noofoto.vn</td>
+                <td><span class="badge blue">THỢ ẢNH</span></td>
+                <td><span class="badge yellow">Chờ đổi mật khẩu</span></td>
+                <td>01 dự án</td>
+                <td>
+                  <div class="action-row">
+                    <button class="btn sm">Gửi lại mật khẩu</button>
+                    <button class="btn sm danger">Khóa</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="staff-inline">
+                    <div class="avatar">TV</div>
+                    <div>
+                      <strong>Thanh Vũ</strong>
+                      <p>Thợ ảnh part-time</p>
+                    </div>
+                  </div>
+                </td>
+                <td>thanhvu@noofoto.vn</td>
+                <td><span class="badge blue">THỢ ẢNH</span></td>
+                <td><span class="badge red">Đã khóa</span></td>
+                <td>0 dự án</td>
+                <td>
+                  <div class="action-row">
+                    <button class="btn sm">Mở khóa</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <div class="modal-overlay" id="accountModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <p class="section-kicker">Tạo tài khoản thành công</p>
+        <h2>Thông tin đăng nhập tạm thời</h2>
+      </div>
+
+      <button class="modal-close" id="closeModal">×</button>
+    </div>
+
+    <div class="account-info">
+      <div>
+        <span>Họ tên</span>
+        <strong id="modalName">---</strong>
+      </div>
+
+      <div>
+        <span>Email</span>
+        <strong id="modalEmail">---</strong>
+      </div>
+
+      <div>
+        <span>Mật khẩu tạm</span>
+        <strong id="modalPassword">---</strong>
+      </div>
+
+      <div>
+        <span>Trạng thái</span>
+        <strong>Chờ đổi mật khẩu</strong>
+      </div>
+    </div>
+
+    <div class="notice-box">
+      <h3>Lưu ý</h3>
+      <p>
+        Admin cần gửi email và mật khẩu tạm cho thợ ảnh. Sau khi đăng nhập lần đầu,
+        thợ ảnh nên đổi mật khẩu mới.
+      </p>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn" id="copyAccountInfo">Copy thông tin</button>
+      <button class="btn primary" id="doneModal">Hoàn tất</button>
     </div>
   </div>
-</section>
-
-<section class="panel">
-  <div class="panel-header"><div><p class="section-kicker">Danh sách nhân sự</p><h2>Tài khoản Admin / Thợ ảnh</h2></div><button class="btn sm">Xuất danh sách</button></div>
-  <div class="card-grid">
-    <div class="staff-card"><div class="staff-top"><div class="avatar">MH</div><div><h3>Minh Hằng</h3><p class="meta">admin@noofoto.vn</p></div></div><span class="badge green">ADMIN</span><div class="card-footer"><button class="btn sm">Sửa</button><button class="btn sm danger">Khóa</button></div></div>
-    <div class="staff-card"><div class="staff-top"><div class="avatar">MA</div><div><h3>Minh Anh</h3><p class="meta">minhanh@noofoto.vn</p></div></div><span class="badge blue">THỢ ẢNH</span><div class="card-footer"><button class="btn sm">Sửa</button><button class="btn sm danger">Khóa</button></div></div>
-    <div class="staff-card"><div class="staff-top"><div class="avatar">QH</div><div><h3>Quốc Huy</h3><p class="meta">quochuy@noofoto.vn</p></div></div><span class="badge blue">THỢ ẢNH</span><div class="card-footer"><button class="btn sm">Sửa</button><button class="btn sm danger">Khóa</button></div></div>
-  </div>
-</section>
-
-    </main>
-  </div>
-
-  <script src="./script.js"></script>
-</body>
+</div>
+    <script src="./staff-demo.js"></script>
+  </body>
 </html>
