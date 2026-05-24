@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto Admin - Quản lý khách hàng</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Bổ sung một số style tối ưu cho trang khách hàng */
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .proj-1 {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .proj-2 {
+      background: rgba(96, 165, 250, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+    }
+    .proj-3 {
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+    .proj-none {
+      background: rgba(148, 163, 184, 0.15);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+    .table-actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .filter-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    .filter-select {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      padding: 6px 12px;
+      outline: none;
+      font-size: 13px;
+    }
+    .empty-state {
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+        <a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+        <a href="customers.html" class="nav-item active" data-nav><span class="icon">👤</span><span>Quản lý khách hàng</span></a>
+        <a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+        <a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+        <a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+        <a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+        <a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+        <a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+        <a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">A</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Admin Studio</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Quản trị hệ thống</p>
+          <h1 class="page-title">Quản lý khách hàng</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" id="customerSearchInput" placeholder="Tìm theo tên, email hoặc SĐT..." />
+          <button class="btn primary" id="btnFocusForm">+ Thêm khách hàng</button>
+        </div>
+      </header>
+
+      <!-- STAT CARDS -->
+      <section class="grid-4">
+        <div class="stat-card">
+          <p>Tổng số khách hàng</p>
+          <h2 id="statTotalCustomers">0</h2>
+          <span>Khách hàng đã lưu hệ thống</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Tỷ lệ khách quay lại</p>
+          <h2 id="statReturningRate">0%</h2>
+          <span>Khách chụp từ 2 lần trở lên</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Tổng số lượt chụp</p>
+          <h2 id="statTotalBookings">0</h2>
+          <span>Tổng số dự án đã thực hiện</span>
+        </div>
+
+        <div class="stat-card">
+          <p>Khách hàng thân thiết</p>
+          <h2 id="statLoyalCustomer" style="font-size: 18px; margin-top: 8px; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">--</h2>
+          <span>Đặt lịch chụp nhiều nhất</span>
+        </div>
+      </section>
+
+      <!-- CONTENT GRID: FORM AND BUSINESS RULES -->
+      <section class="content-grid">
+        <!-- FORM PANEL -->
+        <div class="panel" id="customerFormPanel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker" id="formKicker">Lưu trữ thông tin</p>
+              <h2 id="formTitle">Tạo khách hàng mới</h2>
+              <p class="panel-sub">
+                Lưu trữ thông tin liên hệ và dự án đã thực hiện để dễ thống kê, quản lý nội bộ.
+              </p>
+            </div>
+          </div>
+
+          <form class="form-grid" id="customerForm">
+            <!-- Hidden field for editing -->
+            <input type="hidden" id="customerId" value="" />
+
+            <div class="form-group">
+              <label>Họ và tên khách hàng</label>
+              <input id="customerName" class="input" placeholder="VD: Nguyễn Văn A" required />
+            </div>
+
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input id="customerPhone" class="input" type="tel" placeholder="VD: 0987654321" required />
+            </div>
+
+            <div class="form-group">
+              <label>Địa chỉ Email</label>
+              <input id="customerEmail" class="input" type="email" placeholder="VD: name@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label>Dự án chụp ảnh</label>
+              <select id="customerProjectLink" class="select" style="min-height: 42px; padding: 0 12px; font-size: 14px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--text); outline: none;">
+                <option value="none">-- Chưa liên kết dự án --</option>
+                <option value="project_1">Kỷ yếu 12A1</option>
+                <option value="project_2">Cưới Hoàng & Linh</option>
+                <option value="project_3">Concept nàng thơ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Tổng số lần chụp (Bookings)</label>
+              <input id="customerBookings" class="input" type="number" min="0" value="1" placeholder="Mặc định: 1" required />
+            </div>
+
+
+
+            <div class="form-group full" style="display:flex; gap:10px;">
+              <button class="btn primary" type="submit" id="btnSubmitCustomer" style="flex: 1;">
+                Lưu thông tin khách hàng
+              </button>
+              <button class="btn secondary" type="button" id="btnCancelEdit" style="display: none;">
+                Hủy bỏ
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- PROCESS / RULES PANEL -->
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Quy trình vận hành</p>
+              <h2>Quản lý khách hàng</h2>
+              <p class="panel-sub">
+                Các bước ghi nhận và lưu trữ thông tin phục vụ thống kê nội bộ của Studio.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-list">
+            <div class="process-item" style="border-left: 2px solid var(--blue); padding-left: 15px; margin-bottom: 15px;">
+              <h4 style="color: var(--text); font-size: 14px; font-weight: 700;">1. Ghi nhận thông tin liên hệ</h4>
+              <p style="margin-top: 4px; font-size: 13px; color: #94a3b8;">
+                Lưu lại Tên, SĐT, Email để Studio chủ động liên hệ khi bàn giao ảnh hoặc gửi các chương trình tri ân.
+              </p>
+            </div>
+
+            <div class="process-item" style="border-left: 2px solid var(--green); padding-left: 15px; margin-bottom: 15px;">
+              <h4 style="color: var(--text); font-size: 14px; font-weight: 700;">2. Liên kết dự án đã thực hiện</h4>
+              <p style="margin-top: 4px; font-size: 13px; color: #94a3b8;">
+                Gán khách hàng vào đúng dự án chụp của họ. Điều này giúp Studio thống kê chính xác và xuất báo cáo nội bộ.
+              </p>
+            </div>
+
+            <div class="process-item" style="border-left: 2px solid var(--yellow); padding-left: 15px; margin-bottom: 15px;">
+              <h4 style="color: var(--text); font-size: 14px; font-weight: 700;">3. Theo dõi lượt chụp (Bookings)</h4>
+              <p style="margin-top: 4px; font-size: 13px; color: #94a3b8;">
+                Theo dõi tổng số lần khách đặt lịch/chụp ảnh để nhận diện khách hàng thân thiết và tối ưu hóa trải nghiệm phục vụ.
+              </p>
+            </div>
+          </div>
+
+          <div class="notice-box">
+            <h3>Lưu ý bảo mật</h3>
+            <p>
+              Thông tin khách hàng chỉ được lưu trữ và truy cập nội bộ bởi quản trị viên hệ thống, đảm bảo không có quyền đăng nhập công khai ra bên ngoài.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CUSTOMER LIST PANEL -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-kicker">Cơ sở dữ liệu khách hàng</p>
+            <h2>Danh sách khách hàng</h2>
+            <p class="panel-sub">
+              Nhấp vào cột tiêu đề để sắp xếp. Sử dụng thanh tìm kiếm để tìm nhanh hoặc lọc theo dự án liên kết bên dưới.
+            </p>
+          </div>
+
+          <div class="table-actions">
+            <button class="btn sm" id="btnExportCSV">Xuất dữ liệu</button>
+            <button class="btn sm danger" id="btnResetMockDb" title="Đặt lại dữ liệu gốc">Reset Mock DB</button>
+          </div>
+        </div>
+
+        <!-- FILTER & SORT CONTROLS -->
+        <div class="filter-actions">
+          <div>
+            <span style="font-size:13px; color:var(--muted); margin-right:8px;">Dự án liên kết:</span>
+            <select class="filter-select" id="filterProject">
+              <option value="ALL">Tất cả dự án</option>
+              <option value="project_1">Kỷ yếu 12A1</option>
+              <option value="project_2">Cưới Hoàng & Linh</option>
+              <option value="project_3">Concept nàng thơ</option>
+              <option value="none">Chưa liên kết dự án</option>
+            </select>
+          </div>
+
+          <div>
+            <span style="font-size:13px; color:var(--muted); margin-right:8px;">Sắp xếp theo:</span>
+            <select class="filter-select" id="sortField">
+              <option value="ngay_tao-desc">Mới tạo trước</option>
+              <option value="ngay_tao-asc">Cũ nhất trước</option>
+              <option value="ho_va_ten-asc">Tên từ A-Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TABLE -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Khách hàng</th>
+              <th>Số điện thoại</th>
+              <th>Email liên hệ</th>
+              <th>Dự án thực hiện</th>
+              <th style="text-align: center;">Số lần chụp</th>
+              <th style="width: 180px; text-align: right;">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="customerTableBody">
+            <!-- Script will render customers here -->
+          </tbody>
+        </table>
+        
+        <div id="emptyTableState" class="empty-state" style="display: none;">
+          <p>Không tìm thấy khách hàng nào phù hợp với bộ lọc.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL NOTIFICATION -->
+  <div class="modal-overlay" id="messageModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="section-kicker" id="modalKicker">Thông báo hệ thống</p>
+          <h2 id="modalTitle">Thành công</h2>
+        </div>
+        <button class="modal-close" id="closeModal">×</button>
+      </div>
+
+      <div class="notice-box" style="margin-top: 15px;">
+        <h3 id="modalContentHeading">Đã xử lý thông tin</h3>
+        <p id="modalContentText">Thao tác của bạn đã được cập nhật thành công vào cơ sở dữ liệu giả lập.</p>
+      </div>
+
+      <div class="modal-actions" style="margin-top: 20px; justify-content: flex-end;">
+        <button class="btn primary" id="btnModalOk">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="./script.js"></script>
+  <script src="./customers-demo.js"></script>
+</body>
+</html>

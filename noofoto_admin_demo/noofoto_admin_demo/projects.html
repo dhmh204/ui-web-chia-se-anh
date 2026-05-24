@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noofoto Admin - Quản lý dự án</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -17,6 +18,7 @@
       <nav class="sidebar-nav">
         <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
 <a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+<a href="customers.html" class="nav-item" data-nav><span class="icon">👤</span><span>Quản lý khách hàng</span></a>
 <a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
 <a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
 <a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
@@ -47,7 +49,7 @@
         <div class="top-actions">
           <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
           <input class="search" placeholder="Tìm kiếm nhanh..." />
-          <button class="btn primary" data-demo-alert>+ Tạo dự án</button>
+          <button class="btn primary" id="btn-topbar-create-project">+ Tạo dự án</button>
         </div>
       </header>
 
@@ -55,13 +57,56 @@
 <section class="content-grid">
   <div class="panel">
     <div class="panel-header"><div><p class="section-kicker">Dự án</p><h2>Tạo dự án mới</h2><p class="panel-sub">Dự án là gói chụp/sự kiện, có thể gồm nhiều album.</p></div></div>
-    <form class="form-grid">
-      <div class="form-group"><label>Tên dự án</label><input class="input" placeholder="VD: Kỷ yếu 12A1"></div>
-      <div class="form-group"><label>Ngày chụp</label><input class="input" type="date"></div>
-      <div class="form-group"><label>Khách hàng / lớp / cặp đôi</label><input class="input" placeholder="VD: Lớp 12A1"></div>
-      <div class="form-group"><label>Thợ ảnh phụ trách</label><select class="select"><option>Minh Anh</option><option>Quốc Huy</option><option>Thanh Vũ</option></select></div>
-      <div class="form-group full"><label>Mô tả</label><textarea class="textarea" placeholder="Thông tin buổi chụp, ghi chú, địa điểm..."></textarea></div>
-      <div class="form-group full"><button class="btn primary" type="button" data-demo-alert>Tạo dự án</button></div>
+    <form class="form-grid" id="createProjectForm">
+      <div class="form-group">
+        <label>Tên dự án</label>
+        <input class="input" id="proj-name" placeholder="VD: Kỷ yếu 12A1" required>
+      </div>
+      <div class="form-group">
+        <label>Ngày chụp</label>
+        <input class="input" type="text" id="ngay-chup" placeholder="Chọn ngày chụp" readonly required>
+      </div>
+      <div class="form-group">
+        <label>Số điện thoại khách</label>
+        <input class="input" type="tel" id="khach-sdt" placeholder="VD: 0987654321" required>
+        <div class="field-feedback" id="sdt-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label>Khách hàng / lớp / cặp đôi</label>
+        <input class="input" type="text" id="khach-ten" placeholder="Nhập số điện thoại trước..." disabled required>
+      </div>
+      <div class="form-group">
+        <label>Mật khẩu truy cập (mat_khau)</label>
+        <input class="input" id="proj-pass" type="password" placeholder="Nhập mật khẩu album...">
+      </div>
+      <div class="form-group">
+        <label>Thợ ảnh phụ trách</label>
+        <select class="select" id="proj-staff">
+          <option>Minh Anh</option>
+          <option>Quốc Huy</option>
+          <option>Thanh Vũ</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Ảnh bìa dự án (link_anh_bia)</label>
+        <div class="cover-upload-container">
+          <div class="cover-preview" id="cover-preview-box">
+            <img id="cover-preview-img" src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&auto=format&fit=crop&q=60" alt="Cover Preview" />
+            <div class="cover-overlay-info">Ảnh bìa hiện tại</div>
+          </div>
+          <div class="cover-actions">
+            <div class="btn-group">
+              <button type="button" class="btn" id="btn-random-cover">✦ Chọn ảnh ngẫu nhiên</button>
+              <button type="button" class="btn secondary" id="btn-upload-cover">⬆ Tải ảnh lên</button>
+              <input type="file" id="input-upload-cover" accept="image/*" style="display: none;">
+            </div>
+            <span class="field-feedback info" id="cover-feedback">Đã chọn ảnh bìa mặc định. Bạn có thể chọn ngẫu nhiên ảnh khác hoặc tải file lên.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group full">
+        <button class="btn primary" type="submit" id="btn-submit-project">Tạo dự án</button>
+      </div>
     </form>
   </div>
 
@@ -80,7 +125,7 @@
   <div class="panel-header"><div><p class="section-kicker">Danh sách</p><h2>Dự án hiện có</h2></div></div>
   <table class="table">
     <thead><tr><th>Dự án</th><th>Khách</th><th>Thợ ảnh</th><th>Ngày chụp</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-    <tbody>
+    <tbody id="projectTableBody">
       <tr><td>Kỷ yếu 12A1</td><td>Lớp 12A1</td><td>Minh Anh</td><td>12/05/2026</td><td><span class="badge yellow">Đang sửa</span></td><td class="action-row"><a class="btn sm" href="albums.html">Album</a><button class="btn sm">Sửa</button></td></tr>
       <tr><td>Cưới Hoàng & Linh</td><td>Hoàng - Linh</td><td>Quốc Huy</td><td>08/05/2026</td><td><span class="badge green">Hoàn thành</span></td><td class="action-row"><a class="btn sm" href="albums.html">Album</a><button class="btn sm">Sửa</button></td></tr>
       <tr><td>Concept nàng thơ</td><td>Ngọc Trâm</td><td>Thanh Vũ</td><td>02/05/2026</td><td><span class="badge blue">Mới</span></td><td class="action-row"><a class="btn sm" href="albums.html">Album</a><button class="btn sm">Sửa</button></td></tr>
@@ -91,6 +136,65 @@
     </main>
   </div>
 
+  <!-- MODAL TẠO DỰ ÁN THÀNH CÔNG -->
+  <div class="modal-overlay" id="projectSuccessModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="section-kicker">Khởi tạo thành công</p>
+          <h2>Thông tin dự án mới</h2>
+        </div>
+        <button class="modal-close" id="closeProjectModal">×</button>
+      </div>
+
+      <div class="account-info">
+        <div>
+          <span>Tên dự án</span>
+          <strong id="modalProjName">---</strong>
+        </div>
+        <div>
+          <span>Số điện thoại khách</span>
+          <strong id="modalProjPhone">---</strong>
+        </div>
+        <div>
+          <span>Tên khách hàng</span>
+          <strong id="modalProjCustomer">---</strong>
+        </div>
+        <div>
+          <span>Ngày chụp</span>
+          <strong id="modalProjDate">---</strong>
+        </div>
+        <div>
+          <span>Mật khẩu truy cập</span>
+          <strong id="modalProjPassword">---</strong>
+        </div>
+        <div>
+          <span>Thợ ảnh phụ trách</span>
+          <strong id="modalProjStaff">---</strong>
+        </div>
+        <div style="flex-direction: column; align-items: stretch; gap: 8px;">
+          <span style="align-self: flex-start;">Ảnh bìa dự án</span>
+          <div style="width: 100%; height: 140px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line);">
+            <img id="modalProjCoverImg" src="" style="width: 100%; height: 100%; object-fit: cover;" alt="Cover image">
+          </div>
+        </div>
+      </div>
+
+      <div class="notice-box" style="margin-top: 15px; padding: 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.04); border-left: 3px solid var(--green);">
+        <h3 style="font-size: 13px; margin-bottom: 4px;">Link chia sẻ album khách hàng</h3>
+        <p style="color: var(--green-2); font-family: monospace; font-size: 12px; word-break: break-all; margin-top: 4px;" id="modalProjShareLink">
+          https://noofoto.vn/album/xyz...
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="copyShareLink">Copy link</button>
+        <button class="btn primary" id="doneProjectModal">Hoàn tất</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="./script.js"></script>
 </body>
 </html>

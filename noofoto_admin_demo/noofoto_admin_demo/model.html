@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+        <div class="modal-overlay" id="accountModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <p class="section-kicker">Tạo tài khoản thành công</p>
+        <h2>Thông tin đăng nhập tạm thời</h2>
+      </div>
+
+      <button class="modal-close" id="closeModal">×</button>
+    </div>
+
+    <div class="account-info">
+      <div>
+        <span>Họ tên</span>
+        <strong id="modalName">---</strong>
+      </div>
+
+      <div>
+        <span>Email</span>
+        <strong id="modalEmail">---</strong>
+      </div>
+
+      <div>
+        <span>Mật khẩu tạm</span>
+        <strong id="modalPassword">---</strong>
+      </div>
+
+      <div>
+        <span>Trạng thái</span>
+        <strong>Chờ đổi mật khẩu</strong>
+      </div>
+    </div>
+
+    <div class="notice-box">
+      <h3>Lưu ý</h3>
+      <p>
+        Admin cần gửi email và mật khẩu tạm cho thợ ảnh. Sau khi đăng nhập lần đầu,
+        thợ ảnh nên đổi mật khẩu mới.
+      </p>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn" id="copyAccountInfo">Copy thông tin</button>
+      <button class="btn primary" id="doneModal">Hoàn tất</button>
+    </div>
+  </div>
+    <script src="./staff-demo.js"></script>
+
+</body>
+</html>

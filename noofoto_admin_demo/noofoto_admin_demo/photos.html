@@ -1,81 +1,264 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noofoto Admin - Quản lý ảnh</title>
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="logo-box">
-        <img src="./assets/logo.png" alt="Noofoto" />
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noofoto Admin - Quản lý ảnh</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="logo-box">
+          <img src="./assets/logo.png" alt="Noofoto" />
+        </div>
 
-      <p class="nav-label">Menu chính</p>
-      <nav class="sidebar-nav">
-        <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
-<a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
-<a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
-<a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
-<a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
-<a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
-<a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
-<a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
-<a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
-      </nav>
+        <p class="nav-label">Menu chính</p>
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+          <a href="staff.html" class="nav-item" data-nav><span class="icon">👥</span><span>Quản lý nhân sự</span></a>
+          <a href="customers.html" class="nav-item" data-nav><span class="icon">👤</span><span>Quản lý khách hàng</span></a>
+          <a href="projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Quản lý dự án</span></a>
+          <a href="albums.html" class="nav-item" data-nav><span class="icon">🖼</span><span>Quản lý album</span></a>
+          <a href="photos.html" class="nav-item" data-nav><span class="icon">☁</span><span>Quản lý ảnh</span></a>
+          <a href="feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+          <a href="postproduction.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+          <a href="ai.html" class="nav-item" data-nav><span class="icon">✦</span><span>AI / Nhãn & khuôn mặt</span></a>
+          <a href="settings.html" class="nav-item" data-nav><span class="icon">⚙</span><span>Cài đặt</span></a>
+        </nav>
 
-      <div class="sidebar-footer">
-        <div class="user-mini">
-          <div class="avatar">A</div>
-          <div>
-            <p>Đăng nhập với vai trò</p>
-            <strong>Admin Studio</strong>
+        <div class="sidebar-footer">
+          <div class="user-mini">
+            <div class="avatar">A</div>
+            <div>
+              <p>Đăng nhập với vai trò</p>
+              <strong>Admin Studio</strong>
+            </div>
           </div>
         </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="breadcrumb">Quản trị hệ thống</p>
+            <h1 class="page-title">Quản lý ảnh</h1>
+          </div>
+
+          <div class="top-actions">
+            <button class="btn mobile-toggle" data-mobile-toggle>
+              ☰ Menu
+            </button>
+            <input class="search" placeholder="Tìm kiếm nhanh..." />
+            <button class="btn primary" id="btnUploadTopbar" data-demo-alert>Upload ảnh</button>
+          </div>
+        </header>
+
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Cloudinary</p>
+              <h2>Upload và quản lý ảnh</h2>
+              <p class="panel-sub">
+                Demo UI upload ảnh, lưu URL Cloudinary, ẩn/hiện ảnh và kích hoạt
+                AI xử lý.
+              </p>
+            </div>
+            <button class="btn primary" id="btnUploadPanel" data-demo-alert>Upload ảnh</button>
+          </div>
+
+          <!-- BỘ LỌC DỰ ÁN VÀ ALBUM -->
+          <div style="display: flex; gap: 16px; margin: 18px 0; padding: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--line); border-radius: 16px; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 13px; color: var(--muted);">Dự án:</span>
+              <select id="filterProjectSelect" class="select" style="min-height: 36px; padding: 0 12px; font-size: 13px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--text); outline: none;">
+                <option value="all">-- Tất cả Dự án --</option>
+                <option value="project_1">Kỷ yếu 12A1</option>
+                <option value="project_2">Cưới Hoàng & Linh</option>
+                <option value="project_3">Concept nàng thơ</option>
+              </select>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 13px; color: var(--muted);">Album:</span>
+              <select id="filterAlbumSelect" class="select" style="min-height: 36px; padding: 0 12px; font-size: 13px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--text); outline: none;">
+                <option value="all">-- Tất cả Album --</option>
+                <option value="album_1">Ảnh gốc (Kỷ yếu 12A1)</option>
+                <option value="album_2">Hậu kỳ (Cưới Hoàng & Linh)</option>
+                <option value="album_3">Final (Concept nàng thơ)</option>
+              </select>
+            </div>
+            <div id="activeAlbumAlert" style="font-size: 13px; color: var(--green-2); font-weight: 500; margin-left: auto;">
+              <!-- Đang quản lý: ... -->
+            </div>
+          </div>
+
+          <div class="tabs">
+            <button class="tab active">Tất cả</button>
+            <button class="tab">Ảnh hiển thị</button>
+            <button class="tab">Ảnh bị ẩn</button>
+            <button class="tab">Ảnh mờ</button>
+            <button class="tab">Ảnh được yêu thích</button>
+          </div>
+
+          <div class="card-grid">
+            <div class="photo-card">
+              <div class="photo-thumb"></div>
+              <div class="card-body">
+                <h3>IMG_6773.PNG</h3>
+                <p class="meta">
+                  Cloudinary URL đã lưu · 12 lượt yêu thích · 3 phản hồi
+                </p>
+                <div class="card-footer">
+                  <span class="badge green">Hiển thị</span
+                  ><button class="btn sm">Chi tiết</button
+                  ><button class="btn sm">Ẩn</button>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <div class="photo-thumb"></div>
+              <div class="card-body">
+                <h3>IMG_6810.PNG</h3>
+                <p class="meta">
+                  Cloudinary URL đã lưu · 8 lượt yêu thích · 2 phản hồi
+                </p>
+                <div class="card-footer">
+                  <span class="badge yellow">Đang sửa</span
+                  ><button class="btn sm">Chi tiết</button
+                  ><button class="btn sm">Ẩn</button>
+                </div>
+              </div>
+            </div>
+            <div class="photo-card">
+              <div class="photo-thumb"></div>
+              <div class="card-body">
+                <h3>IMG_6902.PNG</h3>
+                <p class="meta">AI phát hiện ảnh mờ · 0 lượt yêu thích</p>
+                <div class="card-footer">
+                  <span class="badge red">Ảnh mờ</span
+                  ><button class="btn sm">Chi tiết</button
+                  ><button class="btn sm">Hiện lại</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- FILE INPUT ẨN ĐỂ CHỌN ẢNH -->
+    <input type="file" id="photoFileInput" multiple style="display:none;" accept="image/*">
+
+    <!-- MODAL GIẢ LẬP TIẾN ĐỘ UPLOAD CLOUDINARY & PHÂN TÍCH AI -->
+    <div class="modal-overlay" id="uploadProgressModal">
+      <div class="modal" style="width: min(580px, 100%);">
+        <div class="modal-header">
+          <div>
+            <p class="section-kicker">Cloudinary & AI Engine</p>
+            <h2>Tải ảnh lên hệ thống</h2>
+          </div>
+          <button class="modal-close" id="closeUploadModal">×</button>
+        </div>
+
+        <div style="margin-bottom: 14px; font-size: 13px; color: var(--muted);">
+          Hệ thống đang thực hiện tải file lên máy chủ Cloudinary, lưu URL và chạy engine AI để quét độ mờ, nhận diện khuôn mặt tự động.
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; max-height: 320px; overflow-y: auto; padding-right: 4px;" id="uploadItemsContainer">
+          <!-- Động vẽ tiến độ các file upload ở đây -->
+        </div>
+
+        <div class="modal-actions" style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="btn secondary" id="btnCancelUpload">Hủy bỏ</button>
+          <button class="btn primary" id="btnFinishUpload" disabled>Đóng và Xem ảnh</button>
+        </div>
       </div>
-    </aside>
+    </div>
 
-    <main class="main">
-      <header class="topbar">
-        <div>
-          <p class="breadcrumb">Quản trị hệ thống</p>
-          <h1 class="page-title">Quản lý ảnh</h1>
+    <!-- MODAL CHI TIẾT ẢNH CLOUDINARY & PHẢN HỒI Ý KIẾN -->
+    <div class="modal-overlay" id="photoDetailModal">
+      <div class="modal" style="width: min(820px, 100%); max-height: 90vh; display: flex; flex-direction: column;">
+        <div class="modal-header" style="flex-shrink: 0; padding-bottom: 12px; border-bottom: 1px solid var(--line);">
+          <div>
+            <p class="section-kicker">Chi tiết ảnh Cloudinary</p>
+            <h2 id="detailPhotoName">IMG_6773.PNG</h2>
+          </div>
+          <button class="modal-close" id="closeDetailModal">×</button>
         </div>
 
-        <div class="top-actions">
-          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
-          <input class="search" placeholder="Tìm kiếm nhanh..." />
-          <button class="btn primary" data-demo-alert>Upload ảnh</button>
+        <div style="flex: 1; overflow-y: auto; padding: 16px 0; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; min-height: 0;">
+          <!-- Bên trái: Xem trước ảnh + Bounding Boxes -->
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="position: relative; width: 100%; height: 300px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #020617; display: flex; align-items: center; justify-content: center;" id="detailPhotoContainer">
+              <img id="detailPhotoImg" src="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+              <!-- Bounding boxes khuôn mặt sẽ được vẽ đè lên đây bằng JS -->
+            </div>
+            
+            <div class="account-info" style="margin-bottom: 0;">
+              <div style="flex-direction: column; align-items: stretch; gap: 6px; padding: 12px;">
+                <span style="font-size: 11px; align-self: flex-start;">Cloudinary Secure URL</span>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <input id="detailCloudinaryUrl" readonly type="text" style="flex: 1; background: rgba(0,0,0,0.4); border: 1px solid var(--line); border-radius: 8px; color: var(--muted); font-size: 11px; padding: 6px 10px;" value="...">
+                  <button class="btn sm" id="btnCopyCloudinaryUrl" style="white-space: nowrap; height: 28px; font-size: 12px; border-radius: 8px;">Copy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bên phải: Dữ liệu AI + Bảng phản hồi -->
+          <div style="display: flex; flex-direction: column; gap: 16px; min-height: 0;">
+            <!-- Kết quả AI -->
+            <div style="border: 1px solid var(--line); border-radius: 16px; padding: 14px; background: rgba(255,255,255,0.02);">
+              <h3 style="font-size: 13px; font-weight: 700; margin-bottom: 12px; color: var(--green-2); display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 16px;">✦</span> KẾT QUẢ PHÂN TÍCH AI
+              </h3>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 6px;">
+                  <span style="color: var(--muted);">Trạng thái hiển thị:</span>
+                  <strong id="detailStatusBadge" class="badge">--</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 6px;">
+                  <span style="color: var(--muted);">Bộ quét mờ (AI Blur):</span>
+                  <strong id="detailBlurScore">--</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 6px;">
+                  <span style="color: var(--muted);">Nhận diện khuôn mặt:</span>
+                  <strong id="detailFaceCount">--</strong>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <span style="color: var(--muted); font-size: 12px;">Nhãn phân loại (AI Tags):</span>
+                  <div id="detailTagsList" style="display: flex; gap: 6px; flex-wrap: wrap;">
+                    <!-- Nhãn tags -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phản hồi -->
+            <div style="border: 1px solid var(--line); border-radius: 16px; padding: 14px; background: rgba(255,255,255,0.02); display: flex; flex-direction: column; flex: 1; min-height: 0;">
+              <h3 style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: var(--blue); display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                <span>💬</span> YÊU CẦU CHỈNH SỬA & GHI CHÚ
+              </h3>
+              
+              <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; padding-right: 4px;" id="detailCommentsList">
+                <!-- Comments -->
+              </div>
+
+              <div style="display: flex; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; flex-shrink: 0;">
+                <input id="detailNewComment" type="text" placeholder="Nhập ghi chú hoặc phản hồi lại khách..." style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 8px; color: var(--text); padding: 8px 12px; font-size: 12px;">
+                <button class="btn primary sm" id="btnSubmitComment" style="border-radius: 8px; font-size: 12px; padding: 0 14px; height: 34px;">Gửi</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
 
-      
-<section class="panel">
-  <div class="panel-header">
-    <div><p class="section-kicker">Cloudinary</p><h2>Upload và quản lý ảnh</h2><p class="panel-sub">Demo UI upload ảnh, lưu URL Cloudinary, ẩn/hiện ảnh và kích hoạt AI xử lý.</p></div>
-    <button class="btn primary" data-demo-alert>Upload ảnh</button>
-  </div>
+        <div class="modal-actions" style="margin-top: 12px; flex-shrink: 0; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end;">
+          <button class="btn secondary" id="btnCloseDetail">Đóng</button>
+        </div>
+      </div>
+    </div>
 
-  <div class="tabs">
-    <button class="tab active">Tất cả</button>
-    <button class="tab">Ảnh hiển thị</button>
-    <button class="tab">Ảnh bị ẩn</button>
-    <button class="tab">Ảnh mờ</button>
-    <button class="tab">Ảnh được yêu thích</button>
-  </div>
-
-  <div class="card-grid">
-    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6773.PNG</h3><p class="meta">Cloudinary URL đã lưu · 12 lượt yêu thích · 3 phản hồi</p><div class="card-footer"><span class="badge green">Hiển thị</span><button class="btn sm">Chi tiết</button><button class="btn sm">Ẩn</button></div></div></div>
-    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6810.PNG</h3><p class="meta">Cloudinary URL đã lưu · 8 lượt yêu thích · 2 phản hồi</p><div class="card-footer"><span class="badge yellow">Đang sửa</span><button class="btn sm">Chi tiết</button><button class="btn sm">Ẩn</button></div></div></div>
-    <div class="photo-card"><div class="photo-thumb"></div><div class="card-body"><h3>IMG_6902.PNG</h3><p class="meta">AI phát hiện ảnh mờ · 0 lượt yêu thích</p><div class="card-footer"><span class="badge red">Ảnh mờ</span><button class="btn sm">Chi tiết</button><button class="btn sm">Hiện lại</button></div></div></div>
-  </div>
-</section>
-
-    </main>
-  </div>
-
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+    <script src="./photos-demo.js"></script>
+  </body>
 </html>
