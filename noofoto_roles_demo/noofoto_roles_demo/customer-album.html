@@ -22,7 +22,7 @@
         <div>
           <p class="kicker">ALBUM ĐÃ MỞ KHÓA</p>
           <h1>Kỷ yếu 12A1</h1>
-          <p>Xem ảnh, tìm kiếm theo ngữ nghĩa/khuôn mặt, lọc ảnh, yêu thích ảnh và gửi phản hồi chỉnh sửa trực tiếp cho studio.</p>
+          <p>Xem ảnh, tìm kiếm theo ngữ nghĩa, phân loại theo khuôn mặt, lọc ảnh, yêu thích ảnh và gửi phản hồi chỉnh sửa trực tiếp cho studio.</p>
         </div>
         <div class="action-row">
           <span class="badge green">248 ảnh</span>
@@ -33,16 +33,15 @@
 
       <section class="customer-toolbar">
         <input class="search" placeholder="Tìm theo ngữ nghĩa: cô dâu cười, nhóm bạn, váy đỏ..." />
-        <button class="btn">Tìm khuôn mặt</button>
         <button class="btn">Lọc ảnh</button>
       </section>
 
       <div class="tabs">
-        <button class="tab active">Tất cả</button>
-        <button class="tab">Ảnh yêu thích</button>
-        <button class="tab">Có phản hồi</button>
-        <button class="tab">Đã hoàn thành</button>
-        <button class="tab">Theo khuôn mặt</button>
+        <button class="tab active" data-tab="all">Tất cả</button>
+        <button class="tab" data-tab="favorites">Ảnh yêu thích</button>
+        <button class="tab" data-tab="feedback">Có phản hồi</button>
+        <button class="tab" data-tab="completed">Đã hoàn thành</button>
+        <button class="tab" data-tab="faces">Phân theo khuôn mặt</button>
       </div>
 
       <section class="photo-gallery">
@@ -66,6 +65,43 @@
           <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="customer-photo-detail.html">↗</a></div>
           <div class="gallery-info"><div><h3>IMG_7021.PNG</h3><p>1 phản hồi · 3 yêu thích</p></div><span class="badge gray">Chưa xử lý</span></div>
         </article>
+      </section>
+
+      <section class="face-gallery hidden">
+        <div class="face-header">
+          <div>
+            <p class="face-kicker">Nhóm khuôn mặt</p>
+            <h2>Người và thú cưng</h2>
+          </div>
+          <button class="btn sm outline">Ẩn các khuôn mặt khỏi kỷ niệm</button>
+        </div>
+
+        <div class="face-grid">
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+          <article class="face-chip"></article>
+        </div>
       </section>
     </main>
   </div>

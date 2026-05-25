@@ -25,3 +25,25 @@ document.querySelectorAll("[data-like]").forEach((btn) => {
     btn.textContent = btn.classList.contains("active") ? "♥" : "♡";
   });
 });
+
+const tabs = document.querySelectorAll('.tab');
+const photoGallery = document.querySelector('.photo-gallery');
+const faceGallery = document.querySelector('.face-gallery');
+
+function switchGallery(tabKey) {
+  if (tabKey === 'faces') {
+    photoGallery.classList.add('hidden');
+    faceGallery.classList.remove('hidden');
+  } else {
+    faceGallery.classList.add('hidden');
+    photoGallery.classList.remove('hidden');
+  }
+}
+
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    tabs.forEach((item) => item.classList.remove('active'));
+    tab.classList.add('active');
+    switchGallery(tab.dataset.tab);
+  });
+});
