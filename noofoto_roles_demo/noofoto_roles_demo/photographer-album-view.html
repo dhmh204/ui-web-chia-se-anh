@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noofoto - Xem album</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./lightbox.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="./assets/logo.png" alt="Noofoto" />
+      </div>
+
+      <p class="nav-label">Menu chính</p>
+      <nav class="sidebar-nav">
+        <a href="photographer-dashboard.html" class="nav-item" data-nav><span class="icon">◼</span><span>Tổng quan</span></a>
+        <a href="photographer-projects.html" class="nav-item" data-nav><span class="icon">📁</span><span>Dự án được giao</span></a>
+        <a href="photographer-albums.html" class="nav-item active" data-nav><span class="icon">🖼</span><span>Album của tôi</span></a>
+        <a href="photographer-upload.html" class="nav-item" data-nav><span class="icon">☁</span><span>Upload ảnh</span></a>
+        <a href="photographer-feedback.html" class="nav-item" data-nav><span class="icon">💬</span><span>Phản hồi ảnh</span></a>
+        <a href="photographer-favorites.html" class="nav-item" data-nav><span class="icon">♥</span><span>Ảnh khách yêu thích</span></a>
+        <a href="photographer-progress.html" class="nav-item" data-nav><span class="icon">⚡</span><span>Tiến độ hậu kỳ</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="avatar">T</div>
+          <div>
+            <p>Đăng nhập với vai trò</p>
+            <strong>Thợ ảnh</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Noofoto / Album / Kỷ yếu 12A1</p>
+          <h1 class="page-title">Kỷ yếu 12A1</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="btn mobile-toggle" data-mobile-toggle>☰ Menu</button>
+          <input class="search" placeholder="Tìm kiếm ảnh..." />
+          <button class="btn primary" data-demo-alert>⚙ Cài đặt album</button>
+        </div>
+      </header>
+
+      <section class="hero-info">
+        <div>
+          <p class="section-kicker">Album của tôi</p>
+          <h2>Ảnh gốc - Kỷ yếu 12A1</h2>
+          <p>Quản lý ảnh, kiểm tra ảnh mờ, ảnh yêu thích của khách và upload ảnh mới.</p>
+        </div>
+        <div class="action-row">
+          <span class="badge green">248 ảnh</span>
+          <span class="badge blue">12 ảnh yêu thích</span>
+          <span class="badge yellow">8 ảnh mờ</span>
+        </div>
+      </section>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="all">Tất cả (248)</button>
+        <button class="tab" data-tab="blurry">Ảnh mờ (8)</button>
+        <button class="tab" data-tab="favorites">Ảnh yêu thích (12)</button>
+        <button class="tab" data-tab="upload">Upload ảnh</button>
+      </div>
+
+      <!-- Tab: Tất cả ảnh -->
+      <section class="tab-content active" data-tab-content="all">
+        <div class="filter-toolbar">
+          <button class="btn sm" data-demo-alert>↻ Refresh</button>
+          <button class="btn sm" data-demo-alert>📊 Thống kê</button>
+          <button class="btn sm" data-demo-alert>⬇ Tải xuống</button>
+        </div>
+
+        <section class="photo-gallery">
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_6773.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_6773.PNG</h3><p>12 yêu thích · Bình thường</p></div><span class="badge yellow">Đang sửa</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_6810.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn active" data-like>♥</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_6810.PNG</h3><p>8 yêu thích · Bình thường</p></div><span class="badge blue">Mới</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_6902.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_6902.PNG</h3><p>5 yêu thích · Bình thường</p></div><span class="badge green">Hoàn thành</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_7021.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_7021.PNG</h3><p>3 yêu thích · Bình thường</p></div><span class="badge gray">Chưa xử lý</span></div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Tab: Ảnh mờ -->
+      <section class="tab-content" data-tab-content="blurry">
+        <div class="filter-toolbar">
+          <p class="filter-info">Ảnh được phát hiện là mờ hoặc kém chất lượng</p>
+          <button class="btn sm" data-demo-alert>⬇ Tải xuống mọi ảnh mờ</button>
+        </div>
+
+        <section class="photo-gallery">
+          <article class="gallery-card">
+            <div class="photo-thumb blur-indicator" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_5642.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_5642.PNG</h3><p>Mờ nhẹ - Chất lượng 62%</p></div><span class="badge red">Cảnh báo</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb blur-indicator" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_5789.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_5789.PNG</h3><p>Mờ trung bình - Chất lượng 45%</p></div><span class="badge red">Cảnh báo</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb blur-indicator" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_5891.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_5891.PNG</h3><p>Mờ nhẹ - Chất lượng 68%</p></div><span class="badge red">Cảnh báo</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb blur-indicator" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_5923.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn" data-like>♡</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_5923.PNG</h3><p>Mờ nặng - Chất lượng 28%</p></div><span class="badge red">Lỗi</span></div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Tab: Ảnh yêu thích -->
+      <section class="tab-content" data-tab-content="favorites">
+        <div class="filter-toolbar">
+          <p class="filter-info">Ảnh mà khách hàng đã yêu thích</p>
+          <button class="btn sm" data-demo-alert>⬇ Tải xuống mọi ảnh yêu thích</button>
+        </div>
+
+        <section class="photo-gallery">
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_6810.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn active" data-like>♥</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_6810.PNG</h3><p>❤️ Yêu thích bởi khách</p></div><span class="badge blue">Mới</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_6773.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn active" data-like>♥</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_6773.PNG</h3><p>❤️ Yêu thích bởi khách</p></div><span class="badge yellow">Đang sửa</span></div>
+          </article>
+          <article class="gallery-card">
+            <div class="photo-thumb" data-large="./assets/logo.png"><img src="./assets/logo.png" alt="IMG_6234.PNG"></div>
+            <div class="gallery-actions"><button class="floating-btn active" data-like>♥</button><a class="floating-btn" href="photographer-photo-edit.html">✎</a></div>
+            <div class="gallery-info"><div><h3>IMG_6234.PNG</h3><p>❤️ Yêu thích bởi khách</p></div><span class="badge green">Hoàn thành</span></div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Tab: Upload ảnh -->
+      <section class="tab-content" data-tab-content="upload">
+        <div class="upload-section">
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">☁</div>
+            <h3>Kéo ảnh vào đây hoặc nhấp để chọn</h3>
+            <p>Hỗ trợ: JPG, PNG, HEIC (Max 100MB mỗi ảnh)</p>
+            <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+          </div>
+
+          <div id="uploadList" class="upload-list" style="display: none;">
+            <h3>Danh sách chờ upload</h3>
+            <div class="upload-item">
+              <div class="upload-thumbnail"></div>
+              <div class="upload-info">
+                <p class="upload-name">IMG_7234.JPG</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 65%"></div>
+                </div>
+              </div>
+              <span class="upload-status">65%</span>
+            </div>
+            <div class="upload-item">
+              <div class="upload-thumbnail"></div>
+              <div class="upload-info">
+                <p class="upload-name">IMG_7235.JPG</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+              <span class="upload-status">✓</span>
+            </div>
+          </div>
+
+          <button class="btn primary" id="uploadBtn" data-demo-alert>Bắt đầu upload</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="./lightbox.js"></script>
+  <script src="./script.js"></script>
+  <script>
+    // Tab switching logic
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        const tabName = this.getAttribute('data-tab');
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelector(`[data-tab-content="${tabName}"]`).classList.add('active');
+      });
+    });
+
+    // Upload area interaction
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const uploadList = document.getElementById('uploadList');
+
+    uploadArea.addEventListener('click', () => fileInput.click());
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.style.background = 'rgba(16, 185, 129, 0.2)';
+    });
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.style.background = '';
+    });
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.style.background = '';
+      fileInput.files = e.dataTransfer.files;
+      uploadList.style.display = 'block';
+    });
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        uploadList.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
